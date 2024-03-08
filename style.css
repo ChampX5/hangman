@@ -71,6 +71,7 @@ body {
 
 .word {
     display: flex;
+    font-weight: bold;
     gap: 20px;
 }
 
@@ -83,6 +84,7 @@ body {
 
 .word-letter::before {
     content: var(--letter);
+    text-align: center;
     position: absolute;
     font-size: 50px;
     left: 50%;
