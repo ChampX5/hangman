@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, red, blue);
+    color: white;
+    font-family: Rubik;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: calc(5px * 5 + 50px * 6);
+    padding: 25px;
+    grid-gap: 5px;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.letter {
+    background: #5e5e5e;
+    display: flex;
+    width: 50px;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.letter:not(.over):hover {
+    background: #666666;
+}
+
+.letter.over {
+    cursor: default;
+    pointer-events: none;
+}
+
+.letter.over-green {
+    background: green;
+}
+
+.letter.over-red {
+    background: #ff4848;
+}
+
+.letter-y {
+    grid-column-start: 3;
+}
+
+.letter-z {
+    grid-column-start: 4;
+}
+
+.word {
+    display: flex;
+    gap: 20px;
+}
+
+.word-letter {
+    position: relative;
+    width: 40px;
+    height: 5px;
+    transition: all 500ms ease-in-out;
+}
+
+.word-letter::before {
+    content: var(--letter);
+    position: absolute;
+    font-size: 50px;
+    left: 50%;
+    transition: all 500ms ease-in-out;
+}
+
+.attempts {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.attempts-letter {
+    position: relative;
+    font-weight: bold;
+    width: 40px;
+    height: 5px;
+    transition: all 500ms ease-in-out;
+}
+
+.attempts-letter::before {
+    content: var(--letter);
+    position: absolute;
+    font-size: 50px;
+    left: 50%;
+    transition: all 500ms ease-in-out;
+}
+
+.not-discovered {
+    background: white;
+}
+
+.discovered {
+    background: transparent;
+}
+
+.not-discovered::before {
+    translate: -50%;
+    color: transparent;
+}
+
+.discovered::before {
+    translate: -50% calc(-100% + 10px);
+    color: white;
+}
