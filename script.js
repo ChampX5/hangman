@@ -196,6 +196,17 @@ class Game {
             easing: 'ease-in-out'
         });
 
+        for (const letterElement of wordContainer.children) {
+            letterElement.animate({
+                width: '30px'
+            }, {
+                delay: 2250,
+                duration: 750,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+            });
+        }
+
         const reset = document.createElement('div');
         reset.innerHTML = 'You win! <u>RELOAD</u> the page to play again!'
 
@@ -253,6 +264,17 @@ class Game {
             fill: 'forwards',
             easing: 'ease-in-out'
         });
+
+        for (const letterElement of attemptsContainer.children) {
+            letterElement.animate({
+                width: '30px'
+            }, {
+                delay: 2250,
+                duration: 750,
+                fill: 'forwards',
+                easing: 'ease-in-out'
+            });
+        }
 
         const reset = document.createElement('div');
         reset.innerHTML = 'You lose! <u>RELOAD</u> the page to play again!'
