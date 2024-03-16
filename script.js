@@ -200,7 +200,7 @@ class Game {
             letterElement.animate({
                 width: '30px'
             }, {
-                delay: 2250,
+                delay: 1500,
                 duration: 750,
                 fill: 'forwards',
                 easing: 'ease-in-out'
@@ -269,7 +269,7 @@ class Game {
             letterElement.animate({
                 width: '30px'
             }, {
-                delay: 2250,
+                delay: 1500,
                 duration: 750,
                 fill: 'forwards',
                 easing: 'ease-in-out'
